@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/CSS/style.css">
+    <title>Menu</title>
+</head>
+<body>
+    <section class="cotainer_index">
+        <h1>Confira se a pessoa e maior de idade</h1>
+
+        <form class="acao" action="/dados" method="post">
+
+            <label class="nome" for="nome">Digite o nome do usuario:</label>
+            <input type="text" id="nome" name="nome" required><br><br>
+
+            <label class="idade" for="idade">Qual a idade do usuario:</label>
+            <input type="number" id="idade" name="idade" required><br>
+
+            <button class="button" type="submit">Calcular</button>
+        </form>
+
+
+    </section>
+        
+</body>
+</html>
