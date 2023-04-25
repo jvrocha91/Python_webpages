@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/CSS/style.css">
+    <title>Homepage</title>
+    <script>
+        function submitForm() {
+            document.getElementById("menuForm").submit();
+        }
+    </script>
+</head>
+<body>
+
+    <form action="/menu" method="post" id="menuForm">
+        <p>Escolha uma opção:</p>
+        <p>
+            <input type="url" name="option" value="1" onclick="submitForm()"> Opção 1<br>
+            <input type="url" name="option" value="2" onclick="submitForm()"> Opção 2<br>
+        </p>
+    </form>
+        
+</body>
+</html>
