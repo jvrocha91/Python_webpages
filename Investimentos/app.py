@@ -1,36 +1,43 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
-
-#criar a 1 pagina do site 
-#route-> link
-#funcao -> O que voce que exibir na pagina
 
 @app.route("/")
 def homepage():
     return render_template('index.html')
 
-@app.route("/menu", methods=['POST'])
-def menu():
-    choice = int(request.form.get('option', 0))
-
-    if choice == 1:
-        return redirect(url_for('option1'))
-    elif choice == 2:
-        return redirect(url_for('option2'))
+@app.route("/calcular_poupanca", methods=['POST'])
+def calcular_poupanca():
+    escolha = int(request.form.get('escolha'))
+    if escolha == 1:
+        valor = float(request.form.get('valor'))
+        polpansa = float(request.form.get('polpansa'))
+        tempo = int(request.form.get('tempo'))
+        resultado = []
+        for x in range(tempo):
+            valor += polpansa
+            resultado.append(f"Mês {x + 1} - {valor:.2f} R$")
+        return render_template('resultado.html', resultado=resultado)
     else:
-        return redirect(url_for('index'))
+        return "Escolha inválida"
     
-@app.route('/option1')
-def option1():
-    return "Você escolheu a opção 1"
-
-@app.route('/option2')
-def option2():
-    return "Você escolheu a opção 2"   
     
- 
+@app.route("/calcular_juros", methods=['POST'])
+def calcular_juros():
+    escolha = int(request.form.get('escolha'))
+    if escolha == 1:
+        valor = float(request.form.get('valor'))
+        juros = float(request.form.get('juros'))
+        tempo = int(request.form.get('tempo'))
+        resultado2 = []
+        for x in range(tempo):
+            valor+=valor*(juros/100)
+            resultado2.append(f"Mês {x + 1} - {valor:.2f} R$")
+        return render_template('resultado2.html', resultado2=resultado2)
+    else:
+        return "Escolha inválida"   
+       
+    
 
-#colocar o site no ar
-if __name__=="__main__":
+if __name__ == "__main__":
     app.run(debug=True)
