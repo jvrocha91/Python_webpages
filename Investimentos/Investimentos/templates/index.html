@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/CSS/style.css">
+    <title>Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Space+Mono:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+    <h1> InvestServer </h1>
+   
+
+
+    <section class="result1">
+        <h3>Calculadora de Poupança</h3>
+        <form class="form_poupanca" action="/calcular_poupanca" method="post">
+            <input type="hidden" name="escolha" value="1">
+            <label for="valor">Digite um valor:</label>
+            <input type="number" step="any" name="valor" required>
+            <br>
+            <label for="polpansa">Quanto deseja poupar mensalmente:</label>
+            <input type="number" step="any" name="polpansa" required>
+            <br>
+            <label for="tempo">Quantos meses deseja poupar:</label>
+            <input type="number" name="tempo" required>
+            <br>
+            <input type="submit" value="Calcular">
+        </form>
+    </section>
+
+<br><Br><Br>
+    
+    <section class="result2">
+    <h3>Calculadora de Juros</h3>
+        <form class="form_juros" action="/calcular_juros" method="post">
+            <input type="hidden" name="escolha" value="1">
+            <label for="valor">Digite um valor:</label>
+            <input type="number" step="any" name="valor" required>
+            <br>
+            <label for="juros">Quanto sera o juro mensal:</label>
+            <input type="number" step="any" name="juros" required>
+            <br>
+            <label for="tempo">Quantos meses deseja investir:</label>
+            <input type="number" name="tempo" required>
+            <br>
+            <input type="submit" value="Calcular">
+        </form>
+    </section>
+    <p>No InvestServer você pode calcular todos os seus investimentos a longo prazo de maneira rapida e facil</p>
+
+</body>
+</html>
