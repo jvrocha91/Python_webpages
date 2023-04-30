@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/CSS/style.css">
+    <title>Resultado</title>
+</head>
+<body>
+    <h1>Resultado da Poupança</h1>
+    <ul>
+        {% for item in resultado %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('homepage') }}">Voltar</a>
+
+</body>
+</html>
