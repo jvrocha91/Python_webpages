@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Lista de Cidades</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Código da Cidade</th>
+                <th>Nome</th>
+                <th>Estado</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cidade in cidades %}
+                <tr>
+                    <td>{{ cidade.codigo_cidade }}</td>
+                    <td>{{ cidade.nome }}</td>
+                    <td>{{ cidade.estado }}</td>
+                    <td>
+                        <a href="{{ url_for('edit', cidade_id=cidade.id) }}">Editar</a>
+                        <form method="POST" action="{{ url_for('delete', cidade_id=cidade.id) }}">
+                            <input type="submit" value="Excluir">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
